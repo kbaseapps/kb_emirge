@@ -1,0 +1,62 @@
+#
+# define display information
+#
+name: EMIRGE - Assemble 16S from metagenomic WGS reads
+tooltip: |
+	Targeted assembly of SSU rRNA genes from metagenomic WGS reads
+screenshots: []
+
+icon: icon.png
+
+#
+# define a set of similar methods that might be useful to the user
+#
+suggestions:
+	apps:
+		related:
+			[]
+		next:
+			[]
+	methods:
+		related:
+			[]
+		next:
+			[]
+
+#
+# Configure the display and description of parameters
+#
+parameters :
+	input_reads_ref :
+		ui-name : |
+			Read library (or Set) object
+		short-hint : |
+			The read library or read library set to examine
+		long-hint  : |
+			The read library or read library set for which you want to trim.
+	output_sequences_name :
+		ui-name : |
+			Output 16S sequences name
+		short-hint : |
+			Name for output SSU rRNA sequences object
+		long-hint : |
+			Name for output SSU rRNA sequences object
+
+
+description : |
+	<p>EMIRGE reconstructs full length ribosomal genes from short read sequencing data.  In the process, it also provides estimates of the sequences' abundances.<br><br>EMIRGE uses a modification of the EM algorithm to iterate between estimating the expected value of the abundance of all SSU sequences present in a sample and estimating the probabilities for each read that a specific sequence generated that read.  At the end of each iteration, those probabilities are used to re-calculate (correct) a consensus sequence for each reference SSU sequence, and the mapping is repeated, followed by the estimations of probabilities.  The iterations should usually stop when the reference sequences no longer change from one iteration to the next.  Practically, 40-80 iterations is usually sufficient for many samples.  Right now EMIRGE uses Bowtie alignments internally, though in theory a different mapper could be used.<br><br>EMIRGE was designed for Illumina reads in FASTQ format, from pipeline version >= 1.3</p>
+
+
+publications :
+    -
+        pmid: 21595876
+        display-text : |
+            'Miller CS, Baker BJ, Thomas BC, Singer SW, Banfield JF. (2011) EMIRGE: reconstruction of full-length ribosomal genes from microbial community short read sequencing data. Genome Biol. 2011;12(5):R44. doi: 10.1186/gb-2011-12-5-r44'
+        link: https://www.ncbi.nlm.nih.gov/pubmed/21595876
+    -
+        pmid: 23405248
+        display-text : |
+            'Miller CS, Handley KM, Wrighton KC, Frischkorn KR, Thomas BC, Banfield JF. (2013) Short-read assembly of full-length 16S amplicons reveals bacterial diversity in subsurface sediments. PLoS One. 2013;8(2):e56018. doi: 10.1371/journal.pone.0056018'
+        link: https://www.ncbi.nlm.nih.gov/pubmed/23405248
+    -
+    	link: https://github.com/csmiller/EMIRGE
