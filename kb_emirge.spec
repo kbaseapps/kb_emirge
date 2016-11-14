@@ -20,7 +20,7 @@ module kb_emirge {
         workspace_name input_ws;
         data_obj_ref input_reads_ref;  /* may be either ReadSet, PairedEndLibrary, or SingleEndLibrary */
         workspace_name output_ws;
-	data_obj_name output_reads_name;
+	data_obj_name output_sequences_name;
     } run_emirge_Input;
 
     typedef structure {
@@ -40,7 +40,7 @@ module kb_emirge {
     typedef structure {
         data_obj_ref input_reads_ref; /* PairedEndLibrary, or SingleEndLibrary */
         workspace_name output_ws;
-        data_obj_name output_reads_name;
+        data_obj_name output_sequences_name;
     } exec_emirge_Input;
 
     typedef structure {
