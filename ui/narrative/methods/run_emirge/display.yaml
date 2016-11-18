@@ -6,7 +6,7 @@ tooltip: |
 	Targeted assembly of SSU rRNA genes from metagenomic WGS reads
 screenshots: []
 
-icon: icon.png
+icon: emirge-green.png
 
 #
 # define a set of similar methods that might be useful to the user
